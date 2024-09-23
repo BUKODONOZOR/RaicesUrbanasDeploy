@@ -1,0 +1,149 @@
+.content_page {
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+  width: 100%;
+}
+
+.hero {
+  height: 60vh; /* Full height of the viewport */
+  background-image: url('../public/static/images/hero.jpg'); /* URL de la imagen */
+  background-size: cover; /* Asegura que la imagen cubra todo el área */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  color: white; /* Texto blanco para resaltar en la imagen */
+}
+
+.flex {
+  display: flex;
+  flex-direction: row; /* Asegura que sidebar y contenido principal estén en fila */
+}
+
+.sidebar {
+  max-width: 300px; /* Ajusta según tus necesidades */
+  max-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  margin-top: 2%;
+  background-color: #f7f7f7;
+  border: 2px solid #0A4D8A;
+  border-radius: 0%;
+  padding: 1rem;
+}
+
+.input_side {
+  margin: auto;
+  max-width: 90%;
+  border: 2px solid #0A4D8A;
+  margin-top: 6%;
+  background-color: #f7f7f7;
+  outline: none; /* Elimina el contorno del navegador al hacer clic */
+
+}
+
+.title_side {
+  margin-top: 2%;
+  color: #0A4D8A;
+  margin-bottom: 8%;
+}
+
+.label_side {
+  color: #0A4D8A;
+}
+
+.main_content {
+  flex: 1;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.search_bar {
+  margin-bottom: 1rem;
+}
+
+.find_bar {
+  width: 97%; /* Ajusta el ancho al 100% o lo que prefieras */
+  padding: 10px 20px; /* Añade algo de espacio interno */
+  border: 2px solid #0A4D8A; /* Un borde suave */
+  border-radius: 50px; /* Bordes completamente redondeados */
+  outline: none; /* Elimina el contorno del navegador al hacer clic */
+  transition: border-color 0.3s ease; /* Transición suave al cambiar el borde */
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(100px, 3fr)); /* 3 en fila en pantallas grandes */
+  gap: 1rem; /* Espaciado entre las cards */
+}
+
+.card {
+  border: 1px solid #ccc; /* O el estilo que prefieras */
+  padding: 0.2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.load_more {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.button_more_cards {
+  margin-right: 15%;
+  width: 20vw;
+  height: 6vh;
+  background-color: #0A4D8A;
+  border-radius: 50px; /* Bordes completamente redondeados */
+  outline: none; /* Elimina el contorno del navegador al hacer clic */
+  color: #f7f7f7;
+  transition: background-color 0.3s ease; /* Transición suave al cambiar el fondo */
+}
+
+.button_more_cards:hover {
+  background-color: #f7f7f7;
+  color: #0A4D8A;
+  border: 2px solid #0A4D8A; /* Un borde suave */
+}
+
+/* Estilos de héroe */
+.title_hero {
+  font-family: 'Roboto', sans-serif;
+  font-size: 10vh;
+  opacity: 10; /* Empieza invisible */
+  transform: translateY(20px); /* Empieza ligeramente desplazado hacia abajo */
+  animation: fadeInUp 1.5s ease-out forwards; /* Animación ligera de entrada */
+}
+.title_hero:nth-child(1){
+  animation-delay: 0.5s; /* Añade un ligero retraso para el primer elemento */
+}
+
+.title_hero:nth-child(2){
+  animation-delay: 1s; /* Más retraso para el segundo elemento */
+}
+
+.span_hero {
+  color: #0A4D8A;
+}
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .sidebar {
+      max-width: 100%; /* Sidebar ocupa todo el ancho en móviles */
+      margin-top: 0; /* Elimina margen superior en móviles */
+  }
+}
