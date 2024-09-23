@@ -36,11 +36,6 @@ const siteConfig = {
         label: 'Iniciar',
         href: '/login',
       },
-      {
-        label: 'Registrarse',
-        href: '/signup',
-        variant: 'blue',
-      },
     ],
   },
   footer: {
