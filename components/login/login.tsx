@@ -1,8 +1,8 @@
 'use client';
 
 import React, { useState, useRef } from 'react';
-import { useRouter } from 'next/navigation'; // Importa useRouter
-import styles from './Login.module.css';
+import { useRouter } from 'next/navigation';
+import styles from './login.module.css';
 import { login, register } from '../../pages/api/auth';
 
 const Login: React.FC = () => {
@@ -10,7 +10,7 @@ const Login: React.FC = () => {
     const [role, setRole] = useState<string>('comprador');
     const [message, setMessage] = useState<string | null>(null);
     const [messageType, setMessageType] = useState<'success' | 'error'>('success');
-    const router = useRouter(); // Inicializa useRouter
+    const router = useRouter(); 
 
     const handleRoleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         setRole(event.target.value);
@@ -69,7 +69,7 @@ const Login: React.FC = () => {
             setMessageType('success');
             form.reset();
 
-            // Redireccionar a /home después del login exitoso
+           
             router.push('/home');
         } catch (error: unknown) {
             if (error instanceof Error) {
