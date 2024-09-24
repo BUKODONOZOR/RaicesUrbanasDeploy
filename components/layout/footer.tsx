@@ -25,9 +25,7 @@ export const Footer: React.FC<FooterProps> = (props) => {
         <SimpleGrid columns={columns}>
           <Stack spacing="8">
             <Stack alignItems="flex-start">
-              <Flex>
-                <Box as={siteConfig.logo} flex="1" height="32px" />
-              </Flex>
+             
               <Text fontSize="md" color="muted">
                 {siteConfig.seo.description}
               </Text>
