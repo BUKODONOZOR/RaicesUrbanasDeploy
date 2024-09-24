@@ -1,23 +1,30 @@
 .card {
-  border: 2px solid #0A4D8A; /* Borde azul oscuro */
-  border-radius: 10px;
-  padding: 20px;
-  width: 18vw;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición para efectos suaves */
-  display: flex;           /* Usar flexbox */
-  flex-direction: column;  /* Alinear contenido en columna */
-  justify-content: center; /* Centrar verticalmente */
-  align-items: center;     /* Centrar horizontalmente */
-  text-align: center;      /* Centrar texto */
+  max-height: 500px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin: 16px;
+  width: 100%; /* Asegúrate de que la tarjeta ocupe el ancho completo de su contenedor */
+}
+
+.cardImage {
+  width: 100%; /* 100% de ancho */
+  height: 50%; /* 50% de alto */
+  
+  object-fit: cover; /* Mantiene la proporción de la imagen */
 }
 
 .card-content {
-  flex-grow: 1;           /* Permitir que el contenido crezca para centrarlo */
+  padding: 16px;
 }
 
-.card:hover {
-  transform: scale(1.05);  /* Aumenta ligeramente el tamaño */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);  /* Sombra más pronunciada */
-  border-color: #007BFF;  /* Cambia el color del borde en hover */
+.card-title {
+  margin: 0; /* Elimina margen por defecto para h2 */
+  font-size: 1.5rem; /* Tamaño de fuente para el título */
+}
+
+.card-type,
+.card-info {
+  margin: 4px 0; /* Espaciado entre las líneas */
 }

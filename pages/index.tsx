@@ -1,7 +1,7 @@
 import * as React from "react";
 import type { NextPage } from "next";
 import Image from "next/image";
-import '../public/static/images/logofinal.png'
+
 import {
   Container,
   Box,

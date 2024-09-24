@@ -36,13 +36,17 @@ const HomePage: React.FC = () => {
         const response = await axios.get(
           "http://localhost:8080/RaicesUrbanas/properties/readAll"
         );
-        const propertiesWithImage = response.data.map((property: Property) => ({
+
+        // Obtener imágenes aleatorias de Pexels para todas las propiedades
+        const pexelsImages = await fetchPexelsImages(response.data.length);
+
+        const propertiesWithImages = response.data.map((property: Property, index: number) => ({
           ...property,
-          imageUrl:
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwfaI8ci8ByaLZDitzq1ZZwOjIoSelEh2smA&s",
-          description: property.description ?? "Propiedad sin descripción", // Valor predeterminado si description es undefined
+          imageUrl: pexelsImages[index], // Asignar imagen a cada propiedad
+          description: property.description ?? "Propiedad sin descripción",
         }));
-        setProperties(propertiesWithImage);
+
+        setProperties(propertiesWithImages);
         setLoading(false);
       } catch (error) {
         console.error("Error fetching properties:", error);
@@ -52,6 +56,28 @@ const HomePage: React.FC = () => {
 
     fetchData();
   }, []);
+
+  // Función para obtener múltiples imágenes aleatorias de Pexels
+  const fetchPexelsImages = async (count: number) => {
+    try {
+      const apiKey = "ENpjlWKY6m7ZOCx7c0vVsdYrn08uc0QZEg4I45RPGirQiXcCTNJIfPW0"; // Reemplaza con tu API key de Pexels
+      const response = await axios.get(
+        `}`,
+        {
+          headers: {
+            Authorization: apiKey,
+          },
+        }
+      );
+      
+      // Extraer las URLs de las imágenes
+      return response.data.photos.map((photo: any) => photo.src.large);
+    } catch (error) {
+      console.error("Error fetching images from Pexels:", error);
+      // Si ocurre un error, devuelve una lista de imágenes predeterminadas
+      return Array(count).fill("default-image-url");
+    }
+  };
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value.toLowerCase());
