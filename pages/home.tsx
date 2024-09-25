@@ -35,7 +35,7 @@ const HomePage: React.FC = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://${apiUrl}/RaicesUrbanas/properties/readAll`
+          `http://${apiUrl}/RaicesUrbanas/properties/readAll`
         );
 
         // Obtener imágenes aleatorias de Pexels para todas las propiedades
@@ -58,12 +58,11 @@ const HomePage: React.FC = () => {
     fetchData();
   }, []);
 
-  // Función para obtener múltiples imágenes aleatorias de Pexels
   const fetchPexelsImages = async (count: number) => {
     try {
       const apiKey = "ENpjlWKY6m7ZOCx7c0vVsdYrn08uc0QZEg4I45RPGirQiXcCTNJIfPW0"; // Reemplaza con tu API key de Pexels
       const response = await axios.get(
-        `}`,
+        `https://api.pexels.com/v1/search?query=houses&per_page=60`,
         {
           headers: {
             Authorization: apiKey,

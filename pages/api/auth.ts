@@ -2,7 +2,7 @@ import { apiUrl } from "./apiUrl";
 
 export const login = async (email: string, password: string) => {
     try {
-        const response = await fetch(`https://${apiUrl}/RaicesUrbanas/login`, {
+        const response = await fetch(`http://${apiUrl}/RaicesUrbanas/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -27,7 +27,7 @@ export const login = async (email: string, password: string) => {
 
 export const register = async (userName: string, email: string, password: string, roleName: string) => {
     console.log("Datos a enviar: ", { userName, email, password, roleName }); // Verifica que el rol no sea nulo
-    const response = await fetch(`https://${apiUrl}/RaicesUrbanas/register`, {
+    const response = await fetch(`http://${apiUrl}/RaicesUrbanas/register`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

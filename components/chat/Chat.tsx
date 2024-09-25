@@ -23,7 +23,8 @@ const Chat: React.FC = () => {
   }, []);
 
   const sendMessage = () => {
-    if (socket && message) {
+    if (socket && message.trim() !== '') {
+      // Enviar mensaje al servidor
       socket.send(message);
       setMessage(''); // Limpiar el input después de enviar el mensaje
     }
@@ -43,6 +44,7 @@ const Chat: React.FC = () => {
         onChange={(e) => setMessage(e.target.value)}
         placeholder="Escribe tu mensaje..."
         style={{ width: '80%', padding: '5px', marginRight: '5px' }}
+        onKeyPress={(e) => e.key === 'Enter' ? sendMessage() : null} // Enviar con Enter
       />
       <button onClick={sendMessage} style={{ padding: '5px' }}>Enviar</button>
     </div>
