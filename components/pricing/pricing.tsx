@@ -38,10 +38,10 @@ export const Pricing: React.FC<PricingProps> = (props) => {
   return (
     <Section id="pricing" pos="relative" {...rest}>
       <BackgroundGradient height="100%" />
-      <Box zIndex="2" pos="relative">
+      <Box zIndex="2" pos="relative" maxWidth="1200px" mx="auto"> {/* Max width and centering */}
         <SectionTitle title={title} description={description}></SectionTitle>
 
-        <SimpleGrid columns={[1, null, 3]} spacing={4}>
+        <SimpleGrid columns={[1, null, 1]} spacing={4} justifyContent="center"> {/* Center items */}
           {plans?.map((plan) => (
             <PricingBox
               key={plan.id}
@@ -53,7 +53,7 @@ export const Pricing: React.FC<PricingProps> = (props) => {
                   ? {
                       borderColor: "primary.500",
                       _dark: {
-                        borderColor: "primary.500",
+                        borderColor: "blue.500",
                         bg: "blackAlpha.300",
                       },
                     }

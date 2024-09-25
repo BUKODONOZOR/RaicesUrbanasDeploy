@@ -5,6 +5,7 @@ import axios from "axios";
 import Card from "../components/card/Cards"; // Ajusta el path si es necesario
 import styles from '../styles/home.module.css';
 import Chat from "components/chat/Chat";
+import { apiUrl } from "./api/apiUrl";
 
 interface Property {
   id: number;
@@ -34,7 +35,7 @@ const HomePage: React.FC = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8080/RaicesUrbanas/properties/readAll"
+          `https://${apiUrl}/RaicesUrbanas/properties/readAll`
         );
 
         // Obtener imágenes aleatorias de Pexels para todas las propiedades

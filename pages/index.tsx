@@ -280,13 +280,15 @@ const TestimonialsSection = () => {
 
 const PricingSection = () => {
   return (
-    <Pricing {...pricing}>
-      <Text p="8" textAlign="center" color="muted">
-        El IVA puede ser aplicable dependiendo de tu ubicación.
-      </Text>
-    </Pricing>
+    <Box mt="8"> {/* Ajusta el margen superior según sea necesario */}
+      <Pricing {...pricing}>
+        <Text p="8" textAlign="center" color="muted">
+          Para más información contactanos</Text>
+      </Pricing>
+    </Box>
   );
 };
+
 
 const FaqSection = () => {
   return <Faq {...faq} />;

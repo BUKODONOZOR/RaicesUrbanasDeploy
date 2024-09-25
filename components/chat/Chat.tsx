@@ -1,4 +1,4 @@
-// components/Chat.tsx
+import { apiUrl } from 'pages/api/apiUrl';
 import React, { useEffect, useState } from 'react';
 
 const Chat: React.FC = () => {
@@ -8,7 +8,7 @@ const Chat: React.FC = () => {
 
   useEffect(() => {
     // Conexión al WebSocket en el puerto 8080
-    const ws = new WebSocket('ws://localhost:8080/chat');
+    const ws = new WebSocket(`ws://${apiUrl}/chat`);
     setSocket(ws);
 
     // Recibir mensajes desde el WebSocket
